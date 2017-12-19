@@ -8,7 +8,6 @@ import ru.nsu.fit.exception.LogoutException;
 import ru.nsu.fit.exception.RegistrationException;
 import ru.nsu.fit.service.UserService;
 import ru.nsu.fit.web.ErrorMessage;
-import ru.nsu.fit.web.navigation.UserPublicDTO;
 
 @RestController
 public class LoginController {
@@ -20,10 +19,10 @@ public class LoginController {
 
     @RequestMapping(path = "/register", method = RequestMethod.POST)
     ResponseEntity<?> register(@RequestBody AuthData authData){
-        UserPublicDTO user;
+        UserDTO user;
 
         try{
-            user = new UserPublicDTO(userService.register(authData));
+            user = new UserDTO(userService.register(authData));
         }catch (RegistrationException e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorMessage("Cann't register user!"));
         }

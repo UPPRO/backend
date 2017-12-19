@@ -4,12 +4,10 @@ import ru.nsu.fit.database.entities.User;
 import ru.nsu.fit.database.types.Role;
 
 public class UserPublicDTO {
-    private int id;
     private String login;
     private Role role;
 
     public UserPublicDTO(User user) {
-        this.id = user.getId();
         this.login = user.getLogin();
         this.role = user.getRole();
     }
@@ -27,10 +25,6 @@ public class UserPublicDTO {
     }
 
     public UserPublicDTO() {
-    }
-
-    public int getId() {
-        return id;
     }
 
     public void setRole(Role role) {

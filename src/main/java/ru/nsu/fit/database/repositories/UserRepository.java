@@ -6,6 +6,5 @@ import ru.nsu.fit.database.types.Role;
 
 public interface UserRepository extends CrudRepository<User, Long> {
     User findByLogin(String login);
-    User findById(int id);
     User[] findAllByRole(Role role);
 }
