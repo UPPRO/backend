@@ -11,7 +11,7 @@ import java.util.Set;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Integer id = 0;
 
     private String login = "";
 
@@ -29,6 +29,10 @@ public class User {
         this.login = login;
         this.password = password;
         this.role = role;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Integer getId() {

@@ -35,7 +35,7 @@ public class NavigationService {
     }
 
     @PostConstruct
-    private void initializeFolders() {
+    public void initializeFolders() {
         Folder rootFolder = folderRepository.findByRoot(true);
 
         if (rootFolder == null) {
@@ -65,7 +65,7 @@ public class NavigationService {
         return fileRepository.findById(fileId);
     }
 
-    public Folder createPath(List<String> foldersPath, User creator) {
+    Folder createPath(List<String> foldersPath, User creator) {
         Folder folder = folderRepository.findById(getRootFolderId());
 
         for(String subfolderName : foldersPath){
@@ -85,7 +85,7 @@ public class NavigationService {
         return folder;
     }
 
-    public File createFile(FileDTO fileInfo, Folder lastFolder, User creator) {
+    File createFile(FileDTO fileInfo, Folder lastFolder, User creator) {
         File file = new File(fileInfo);
 
         file = fileRepository.save(file);

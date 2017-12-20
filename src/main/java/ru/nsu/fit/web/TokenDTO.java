@@ -1,4 +1,4 @@
-package ru.nsu.fit.service;
+package ru.nsu.fit.web;
 
 public class TokenDTO {
     private String data;

@@ -9,39 +9,19 @@ import java.util.Set;
 public class Folder {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-
-    public Integer getId() {
-        return id;
-    }
-
+    private Integer id = 0;
     private String name;
-
     @ManyToOne
     @JoinColumn(name = "creator_id")
     private User creator;
-
     @ManyToOne(cascade = {CascadeType.DETACH})
     @JoinColumn(name = "parent_folder_id")
     private Folder parentFolder;
-
     @OneToMany(mappedBy = "parentFolder")
     private Set<Folder> subfolders = new HashSet<>();
-
     @OneToMany(mappedBy = "parentFolder")
     private Set<File> files = new HashSet<>();
-
-
-
     private boolean root = false;
-
-    public Set<Folder> getSubfolders() {
-        return subfolders;
-    }
-
-    public Set<File> getFiles() {
-        return files;
-    }
 
     public Folder(String name, User creator, boolean root) {
         this.name = name;
@@ -50,6 +30,22 @@ public class Folder {
     }
 
     public Folder() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Set<Folder> getSubfolders() {
+        return subfolders;
+    }
+
+    public Set<File> getFiles() {
+        return files;
     }
 
     public String getName() {

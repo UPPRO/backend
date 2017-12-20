@@ -57,9 +57,7 @@ public class UserService implements UserDetailsService {
             throw new RegistrationException("User with this login already exists");
         }
 
-        User newUser = userRepository.save(new User(authData.getLogin(), passwordEncoder.encode(authData.getPassword()), Role.USER));
-
-        return newUser;
+        return userRepository.save(new User(authData.getLogin(), passwordEncoder.encode(authData.getPassword()), Role.USER));
     }
 
     public Token login(AuthData authData) throws AuthenticationException {
@@ -72,8 +70,7 @@ public class UserService implements UserDetailsService {
         }
 
         String tokenUniqueData = Integer.toString((int) (Math.random() * Integer.MAX_VALUE));
-        Token token = tokenRepository.save(new Token(tokenUniqueData, user));
-        return token;
+        return tokenRepository.save(new Token(tokenUniqueData, user));
     }
 
     public Token logout(String authToken) throws LogoutException {
@@ -126,7 +123,7 @@ public class UserService implements UserDetailsService {
     }
 
     @PostConstruct
-    private void initializeUsers() {
+    public void initializeUsers() {
         User[] administrators = userRepository.findAllByRole(Role.ADMINISTRATOR);
 
         if (administrators.length == 0) {
