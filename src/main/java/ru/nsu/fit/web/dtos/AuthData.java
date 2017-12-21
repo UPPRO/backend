@@ -1,4 +1,4 @@
-package ru.nsu.fit.web.login;
+package ru.nsu.fit.web.dtos;
 
 public class AuthData {
     private String login;

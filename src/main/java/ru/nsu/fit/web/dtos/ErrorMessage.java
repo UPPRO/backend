@@ -1,11 +1,11 @@
-package ru.nsu.fit.web;
+package ru.nsu.fit.web.dtos;
 
 import java.io.Serializable;
 
-public class InformationMessage implements Serializable{
+public class ErrorMessage implements Serializable{
     private String message;
 
-    public InformationMessage(String message) {
+    public ErrorMessage(String message) {
         this.message = message;
     }
 

@@ -1,13 +1,13 @@
-package ru.nsu.fit.web.users;
+package ru.nsu.fit.web.controllers;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.nsu.fit.database.entities.User;
 import ru.nsu.fit.database.types.Role;
 import ru.nsu.fit.service.UserService;
-import ru.nsu.fit.web.ErrorMessage;
-import ru.nsu.fit.web.login.AuthData;
-import ru.nsu.fit.web.navigation.UserPublicDTO;
+import ru.nsu.fit.web.dtos.ErrorMessage;
+import ru.nsu.fit.web.dtos.AuthData;
+import ru.nsu.fit.web.dtos.UserPublicDTO;
 
 import java.util.stream.Collectors;
 
@@ -28,7 +28,6 @@ public class UsersController {
     public ResponseEntity<?> allUsers() {
         return ResponseEntity.ok(userService.getAllUsers().stream().map(UserPublicDTO::new).collect(Collectors.toList()));
     }
-
 
     @RequestMapping(path = "/roles/all", method = RequestMethod.GET)
     public ResponseEntity<?> allRoles() {

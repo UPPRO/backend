@@ -1,4 +1,4 @@
-package ru.nsu.fit.web.fileManagement;
+package ru.nsu.fit.web.controllers;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -8,12 +8,9 @@ import ru.nsu.fit.database.types.Role;
 import ru.nsu.fit.service.FileManagementService;
 import ru.nsu.fit.service.NavigationService;
 import ru.nsu.fit.service.UserService;
-import ru.nsu.fit.web.ErrorMessage;
-import ru.nsu.fit.web.InformationMessage;
-import ru.nsu.fit.web.navigation.FileDTO;
-import ru.nsu.fit.web.navigation.UserPublicDTO;
-
-import java.util.stream.Collectors;
+import ru.nsu.fit.web.dtos.ErrorMessage;
+import ru.nsu.fit.web.dtos.InformationMessage;
+import ru.nsu.fit.web.dtos.FileDTO;
 
 @RestController
 public class FileManagementController {

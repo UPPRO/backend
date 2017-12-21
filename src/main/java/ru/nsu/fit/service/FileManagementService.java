@@ -7,7 +7,6 @@ import ru.nsu.fit.database.entities.Folder;
 import ru.nsu.fit.database.repositories.FileDataRepository;
 import ru.nsu.fit.database.repositories.FileRepository;
 import ru.nsu.fit.database.repositories.FolderRepository;
-import ru.nsu.fit.web.navigation.FileDTO;
 
 @Service
 public class FileManagementService {
