@@ -24,7 +24,7 @@ public class FileManagementService {
 
     public File markAsChecked(int fileId) {
         File file = fileRepository.findById(fileId);
-        file.setChecked(true);
+        file.setChecked();
         file = fileRepository.save(file);
         return file;
     }

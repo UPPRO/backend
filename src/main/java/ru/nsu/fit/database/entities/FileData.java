@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class FileData {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Integer id = 0;
 
     @OneToOne(fetch = FetchType.LAZY)
     private File file;

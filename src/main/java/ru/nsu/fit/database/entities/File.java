@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class File {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Integer id = 0;
 
     private String name;
 
@@ -36,6 +36,10 @@ public class File {
     private int fullness = 1;
 
     public File() {
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public File(FileDTO fileDTO) {
@@ -92,8 +96,8 @@ public class File {
         return checked;
     }
 
-    public void setChecked(boolean checked) {
-        this.checked = checked;
+    public void setChecked() {
+        this.checked = true;
     }
 
     public String getFaculty() {
