@@ -14,8 +14,8 @@ import ru.nsu.fit.database.repositories.UserRepository;
 import ru.nsu.fit.database.types.Role;
 import ru.nsu.fit.exception.LogoutException;
 import ru.nsu.fit.exception.RegistrationException;
-import ru.nsu.fit.web.login.AuthData;
-import ru.nsu.fit.web.navigation.UserPublicDTO;
+import ru.nsu.fit.web.dtos.AuthData;
+import ru.nsu.fit.web.dtos.UserPublicDTO;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
@@ -48,7 +48,6 @@ public class UserService implements UserDetailsService {
                 Collections.singletonList(new SimpleGrantedAuthority(user.getRole().toString()))
         );
     }
-
 
     public User register(AuthData authData) throws RegistrationException {
         User user = userRepository.findByLogin(authData.getLogin());

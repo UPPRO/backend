@@ -1,7 +1,7 @@
 package ru.nsu.fit.database.entities;
 
 import org.hibernate.validator.constraints.Range;
-import ru.nsu.fit.web.navigation.FileDTO;
+import ru.nsu.fit.web.dtos.FileDTO;
 
 import javax.persistence.*;
 
@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class File {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id = 0;
+    private Integer id = -1;
 
     private String name;
 

@@ -1,4 +1,4 @@
-package ru.nsu.fit.web.navigation;
+package ru.nsu.fit.web.dtos;
 
 import ru.nsu.fit.database.entities.Folder;
 

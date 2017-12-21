@@ -1,4 +1,4 @@
-package ru.nsu.fit.web.load;
+package ru.nsu.fit.web.controllers;
 
 import org.apache.tomcat.util.http.fileupload.FileUploadException;
 import org.springframework.http.MediaType;
@@ -8,8 +8,8 @@ import org.springframework.web.multipart.MultipartFile;
 import ru.nsu.fit.database.entities.File;
 import ru.nsu.fit.service.LoadService;
 import ru.nsu.fit.service.NavigationService;
-import ru.nsu.fit.web.ErrorMessage;
-import ru.nsu.fit.web.navigation.FileDTO;
+import ru.nsu.fit.web.dtos.ErrorMessage;
+import ru.nsu.fit.web.dtos.FileDTO;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

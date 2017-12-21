@@ -1,11 +1,11 @@
-package ru.nsu.fit.web.navigation;
+package ru.nsu.fit.web.controllers;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.nsu.fit.database.entities.File;
-import ru.nsu.fit.database.entities.Folder;
 import ru.nsu.fit.service.NavigationService;
+import ru.nsu.fit.web.dtos.FileDTO;
+import ru.nsu.fit.web.dtos.FolderDTO;
 
 import java.util.stream.Collectors;
 

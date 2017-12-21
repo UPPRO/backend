@@ -2,16 +2,13 @@ package ru.nsu.fit.service;
 
 import org.springframework.stereotype.Service;
 import ru.nsu.fit.database.entities.File;
-import ru.nsu.fit.database.entities.FileData;
 import ru.nsu.fit.database.entities.Folder;
 import ru.nsu.fit.database.entities.User;
 import ru.nsu.fit.database.repositories.FileDataRepository;
 import ru.nsu.fit.database.repositories.FileRepository;
 import ru.nsu.fit.database.repositories.FolderRepository;
 import ru.nsu.fit.database.repositories.UserRepository;
-import ru.nsu.fit.web.login.UserDTO;
-import ru.nsu.fit.web.navigation.FileDTO;
-import ru.nsu.fit.web.navigation.FolderDTO;
+import ru.nsu.fit.web.dtos.FileDTO;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
@@ -65,7 +62,7 @@ public class NavigationService {
         return fileRepository.findById(fileId);
     }
 
-    Folder createPath(List<String> foldersPath, User creator) {
+    public Folder createPath(List<String> foldersPath, User creator) {
         Folder folder = folderRepository.findById(getRootFolderId());
 
         for(String subfolderName : foldersPath){
@@ -85,7 +82,7 @@ public class NavigationService {
         return folder;
     }
 
-    File createFile(FileDTO fileInfo, Folder lastFolder, User creator) {
+    public File createFile(FileDTO fileInfo, Folder lastFolder, User creator) {
         File file = new File(fileInfo);
 
         file = fileRepository.save(file);

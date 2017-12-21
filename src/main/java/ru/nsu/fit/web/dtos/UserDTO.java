@@ -1,4 +1,4 @@
-package ru.nsu.fit.web.login;
+package ru.nsu.fit.web.dtos;
 
 import ru.nsu.fit.database.entities.User;
 import ru.nsu.fit.database.types.Role;

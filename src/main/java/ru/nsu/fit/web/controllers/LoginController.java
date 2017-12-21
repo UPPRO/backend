@@ -1,4 +1,4 @@
-package ru.nsu.fit.web.login;
+package ru.nsu.fit.web.controllers;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.*;
 import ru.nsu.fit.exception.LogoutException;
 import ru.nsu.fit.exception.RegistrationException;
 import ru.nsu.fit.service.UserService;
-import ru.nsu.fit.web.ErrorMessage;
-import ru.nsu.fit.web.navigation.UserPublicDTO;
+import ru.nsu.fit.web.dtos.AuthData;
+import ru.nsu.fit.web.dtos.ErrorMessage;
+import ru.nsu.fit.web.dtos.TokenDTO;
+import ru.nsu.fit.web.dtos.UserPublicDTO;
 
 @RestController
 public class LoginController {
